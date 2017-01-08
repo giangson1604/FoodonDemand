@@ -1,0 +1,29 @@
+   
+<div class="container">
+   <div id="foods" class="transitions-enabled">
+   <% @foods.each do |food| %>
+     <div class="box">
+       <div class="panel panel-default">
+       <%= link_to image_tag(food.image.url(:medium)), food %><br/>
+         <div class="panel-body">
+         <%= food.name %><br/>
+         <td><%= link_to 'Show Detail...', food %></td>
+
+        </div>
+         <% if food.user == current_user %>
+         <div class="panel-footer">
+         <%= link_to 'Edit', edit_food_path(food) %><br/>
+         <%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you
+         sure?' } %>
+         </div>
+         <% end %>
+       </div>
+     </div>
+     <% end %>
+   </div>
+</div>
+
+ <div class="center"> 
+     <%= will_paginate @foods, renderer: BootstrapPagination::Rails %>
+ </div>
+

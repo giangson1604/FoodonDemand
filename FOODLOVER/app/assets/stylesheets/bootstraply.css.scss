@@ -1,0 +1,10 @@
+$jumbotron-bg: wheat;
+$navbar-default-bg: #66cde7;
+$body-bg: #ecf0f1;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.center {
+	text-align: center;
+}
